@@ -96,17 +96,18 @@
 
 
 
-  <meta name="description" content="做一只爱撸代码的猿">
+  <meta name="description" content="关于Semaphore的相关介绍123456789Semaphore通常用于限制可以访问某些资源（物理或逻辑的）的线程数目，我们可以自己设定最大访问量。它有两个很常用的方法是acquire()和release()，分别是获得许可和释放许可。​		官方JDK上面对Semaphore的解释是这样子的 ：​		一个计数信号量。从概念上讲，信号量维护了一个许可集。如有必要，在许可可用前会阻塞每一个acqu">
 <meta name="keywords" content="java, spring, springboot, springcloud, redis, rabbitMQ, mysql, netty, python">
-<meta property="og:type" content="website">
-<meta property="og:title" content="偷闲">
-<meta property="og:url" content="https://pigletlet.github.io/yupengsun.github.io/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="线程同步工具Semaphore的使用">
+<meta property="og:url" content="https://pigletlet.github.io/yupengsun.github.io/2019/05/24/Semaphore/index.html">
 <meta property="og:site_name" content="偷闲">
-<meta property="og:description" content="做一只爱撸代码的猿">
+<meta property="og:description" content="关于Semaphore的相关介绍123456789Semaphore通常用于限制可以访问某些资源（物理或逻辑的）的线程数目，我们可以自己设定最大访问量。它有两个很常用的方法是acquire()和release()，分别是获得许可和释放许可。​		官方JDK上面对Semaphore的解释是这样子的 ：​		一个计数信号量。从概念上讲，信号量维护了一个许可集。如有必要，在许可可用前会阻塞每一个acqu">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-24T02:37:56.662Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="偷闲">
-<meta name="twitter:description" content="做一只爱撸代码的猿">
+<meta name="twitter:title" content="线程同步工具Semaphore的使用">
+<meta name="twitter:description" content="关于Semaphore的相关介绍123456789Semaphore通常用于限制可以访问某些资源（物理或逻辑的）的线程数目，我们可以自己设定最大访问量。它有两个很常用的方法是acquire()和release()，分别是获得许可和释放许可。​		官方JDK上面对Semaphore的解释是这样子的 ：​		一个计数信号量。从概念上讲，信号量维护了一个许可集。如有必要，在许可可用前会阻塞每一个acqu">
 
 
 
@@ -114,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="https://pigletlet.github.io/yupengsun.github.io/">
+  <link rel="canonical" href="https://pigletlet.github.io/yupengsun.github.io/2019/05/24/Semaphore/">
 
 
 
@@ -124,7 +125,7 @@
   };
 </script>
 
-  <title>偷闲</title>
+  <title>线程同步工具Semaphore的使用 | 偷闲</title>
   
 
 
@@ -172,8 +173,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -273,156 +273,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://pigletlet.github.io/yupengsun.github.io/yupengsun.github.io/2019/05/24/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="james.lannister">
-      <meta itemprop="description" content="做一只爱撸代码的猿">
-      <meta itemprop="image" content="/yupengsun.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="偷闲">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/yupengsun.github.io/2019/05/24/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-05-24 10:25:41" itemprop="dateCreated datePublished" datetime="2019-05-24T10:25:41+08:00">2019-05-24</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -454,10 +307,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/yupengsun.github.io/2019/05/24/Semaphore/" class="post-title-link" itemprop="url">线程同步工具Semaphore的使用</a>
+          <h1 class="post-title" itemprop="name headline">线程同步工具Semaphore的使用
+
               
             
           </h1>
@@ -521,15 +372,11 @@
       
 
       
-        
-          
-            <h3 id="关于Semaphore的相关介绍"><a href="#关于Semaphore的相关介绍" class="headerlink" title="关于Semaphore的相关介绍"></a>关于Semaphore的相关介绍</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Semaphore通常用于限制可以访问某些资源（物理或逻辑的）的线程数目，我们可以自己设定最大访问量。它有两个很常用的方法是acquire()和release()，分别是获得许可和释放许可。</span><br><span class="line"></span><br><span class="line">​		官方JDK上面对Semaphore的解释是这样子的 ：</span><br><span class="line"></span><br><span class="line">​		一个计数信号量。从概念上讲，信号量维护了一个许可集。如有必要，在许可可用前会阻塞每一个acquire()，然后再获取该许可。每个release()添加一个许可，从而可能释放一个正在阻塞的获取者。但是，不使用实际的许可对象，Semaphore 只对可用许可的号码进行计数，并采取相应的行动。拿到信号量的线程可以进入代码，否则就等待。通过acquire()和release()获取和释放访问许可。</span><br><span class="line"></span><br><span class="line">​		我的解释是这样子的：</span><br><span class="line"></span><br><span class="line">   	Semaphore相当于一个厕所，我在造的时候可以想造几个坑就造几个坑，假如现在我就造了3个坑，现在有10个人想要来上厕所，那么每次就只能3个人上，谁最先抢到谁就进去，出来了一个人后，第4个人才能进去，这个就限制了上厕所的人数了，就这个道理。每个人上厕所之前都先acquire()一下，如果有坑，就可以进入，没有就被阻塞，在外面等；上完厕所后，会release()一下，释放一个坑出来，以保证下一个人acquire()的时候有坑。</span><br></pre></td></tr></table></figure>
+        <h3 id="关于Semaphore的相关介绍"><a href="#关于Semaphore的相关介绍" class="headerlink" title="关于Semaphore的相关介绍"></a>关于Semaphore的相关介绍</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Semaphore通常用于限制可以访问某些资源（物理或逻辑的）的线程数目，我们可以自己设定最大访问量。它有两个很常用的方法是acquire()和release()，分别是获得许可和释放许可。</span><br><span class="line"></span><br><span class="line">​		官方JDK上面对Semaphore的解释是这样子的 ：</span><br><span class="line"></span><br><span class="line">​		一个计数信号量。从概念上讲，信号量维护了一个许可集。如有必要，在许可可用前会阻塞每一个acquire()，然后再获取该许可。每个release()添加一个许可，从而可能释放一个正在阻塞的获取者。但是，不使用实际的许可对象，Semaphore 只对可用许可的号码进行计数，并采取相应的行动。拿到信号量的线程可以进入代码，否则就等待。通过acquire()和release()获取和释放访问许可。</span><br><span class="line"></span><br><span class="line">​		我的解释是这样子的：</span><br><span class="line"></span><br><span class="line">   	Semaphore相当于一个厕所，我在造的时候可以想造几个坑就造几个坑，假如现在我就造了3个坑，现在有10个人想要来上厕所，那么每次就只能3个人上，谁最先抢到谁就进去，出来了一个人后，第4个人才能进去，这个就限制了上厕所的人数了，就这个道理。每个人上厕所之前都先acquire()一下，如果有坑，就可以进入，没有就被阻塞，在外面等；上完厕所后，会release()一下，释放一个坑出来，以保证下一个人acquire()的时候有坑。</span><br></pre></td></tr></table></figure>
 <h3 id="Semaphore基本使用"><a href="#Semaphore基本使用" class="headerlink" title="Semaphore基本使用"></a>Semaphore基本使用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">Semaphore在限制资源访问量的问题上用处很大，比如限制一个文件的并发访问次数等，它的原理很好理解。下面写一个Semaphore的示例代码：</span><br><span class="line">public class SemaphoreTest &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        ExecutorService service = Executors.newCachedThreadPool();//使用并发库，创建缓存的线程池</span><br><span class="line">        final Semaphore sp = new Semaphore(3);//创建一个Semaphore信号量，并设置最大并发数为3</span><br><span class="line">        //availablePermits() //用来获取当前可用的访问次数</span><br><span class="line">        System.out.println(&quot;初始化：当前有&quot; + (3 - sp.availablePermits() + &quot;个并发&quot;));</span><br><span class="line">        //创建10个任务，上面的缓存线程池就会创建10个对应的线程去执行</span><br><span class="line">        for (int index = 0; index &lt; 10; index++) &#123;</span><br><span class="line">            final int NO = index;  //记录第几个任务</span><br><span class="line">            Runnable run = new Runnable() &#123;  //具体任务</span><br><span class="line">                public void run() &#123;  </span><br><span class="line">                    try &#123;                          </span><br><span class="line">                        sp.acquire();  // 获取许可 </span><br><span class="line">                        System.out.println(Thread.currentThread().getName() </span><br><span class="line">                            + &quot;获取许可&quot; + &quot;(&quot;+NO+&quot;)，&quot; + &quot;剩余：&quot; + sp.availablePermits());  </span><br><span class="line">                        Thread.sleep(1000);  </span><br><span class="line">                        // 访问完后记得释放 ，否则在控制台只能打印3条记录，之后线程一直阻塞</span><br><span class="line">                        sp.release();  //释放许可</span><br><span class="line">                        System.out.println(Thread.currentThread().getName() </span><br><span class="line">                            + &quot;释放许可&quot; + &quot;(&quot;+NO+&quot;)，&quot; + &quot;剩余：&quot; + sp.availablePermits());  </span><br><span class="line">                    &#125; catch (InterruptedException e) &#123;  </span><br><span class="line">                    &#125;  </span><br><span class="line">                &#125;  </span><br><span class="line">            &#125;;  </span><br><span class="line">            service.execute(run);  //执行任务</span><br><span class="line">        &#125;         </span><br><span class="line">        service.shutdown(); //关闭线程池</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">解释-代码结构很容易理解，10个任务，每次最多3个线程去执行任务，其他线程被阻塞。可以通过打印信息来看线程的执行情况：</span><br><span class="line">初始化：当前有0个并发 </span><br><span class="line">  pool-1-thread-1获取许可(0)，剩余：1 </span><br><span class="line">  pool-1-thread-3获取许可(2)，剩余：0 </span><br><span class="line">  pool-1-thread-2获取许可(1)，剩余：1 </span><br><span class="line">  pool-1-thread-1释放许可(0)，剩余：3 </span><br><span class="line">  pool-1-thread-4获取许可(3)，剩余：1 </span><br><span class="line">  pool-1-thread-5获取许可(4)，剩余：1 </span><br><span class="line">  pool-1-thread-2释放许可(1)，剩余：3 </span><br><span class="line">  pool-1-thread-3释放许可(2)，剩余：3 </span><br><span class="line">  pool-1-thread-6获取许可(5)，剩余：0 </span><br><span class="line">  pool-1-thread-4释放许可(3)，剩余：2 </span><br><span class="line">  pool-1-thread-9获取许可(8)，剩余：0 </span><br><span class="line">  pool-1-thread-5释放许可(4)，剩余：2 </span><br><span class="line">  pool-1-thread-6释放许可(5)，剩余：2 </span><br><span class="line">  pool-1-thread-8获取许可(7)，剩余：0 </span><br><span class="line">  pool-1-thread-7获取许可(6)，剩余：2 </span><br><span class="line">  pool-1-thread-8释放许可(7)，剩余：2 </span><br><span class="line">  pool-1-thread-10获取许可(9)，剩余：2 </span><br><span class="line">  pool-1-thread-7释放许可(6)，剩余：2 </span><br><span class="line">  pool-1-thread-9释放许可(8)，剩余：2 </span><br><span class="line">  pool-1-thread-10释放许可(9)，剩余：3</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">从结果中看，前三个为什么剩余的不是3，2，1呢？包括下面，每次释放的时候剩余的量好像也不对，其实是对的，只不过线程运行太快，前三个是这样子的：因为最大访问量是3，所以前三个在打印语句之前都执行完了aquire()方法了，或者有部分执行了，从上面的结果来看，线程1是第一个进去的，线程2第二个进去，然后线程1和2开始打印，所以只剩1个了，接下来线程3进来了，打印只剩0个了。后面释放的时候也是，打印前可能有不止一个释放了。</span><br></pre></td></tr></table></figure>
 <h3 id="Semaphore同步问题"><a href="#Semaphore同步问题" class="headerlink" title="Semaphore同步问题"></a>Semaphore同步问题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">我从网上查了一下，有些人说Semaphore实现了同步功能，我觉得不对，因为我自己写了个测试代码试了，并不会自己解决并发问题，如果多个线程操作同一个数据，还是需要自己同步一下的。然后我查了一下官方JDK文档（要永远相信官方的文档），它里面是这样说的：</span><br><span class="line">  </span><br><span class="line">获得一项前，每个线程必须从信号量获取许可，从而保证可以使用该项。该线程结束后，将项返回到池中并将许可返回到该信号量，从而允许其他线程获取该项。注意，调用 acquire() 时无法保持同步锁，因为这会阻止将项返回到池中。信号量封装所需的同步，以限制对池的访问，这同维持该池本身一致性所需的同步是分开的。</span><br><span class="line">　　这段官方的解释就很明确了，然后我就明白了网上有些人说的实现了同步的意思是信号量本身封装所需的同步，也就是说我拿到了一个，别人就无法拿到了，我释放了别人才能拿到（就跟我举的厕所的坑一样），但是我拿到了之后去操作公共数据的时候，针对这个数据操作的同步Semaphore就不管了，这就需要我们自己去同步了。下面写一个同步的测试代码：</span><br><span class="line"></span><br><span class="line">public class SemaphoreTest2 &#123;</span><br><span class="line">    private static int data = 0;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        ExecutorService service = Executors.newCachedThreadPool();</span><br><span class="line">        final Semaphore sp = new Semaphore(3);</span><br><span class="line">        System.out.println(&quot;初始化：当前有&quot; + (3 - sp.availablePermits() + &quot;个并发&quot;));</span><br><span class="line">        // 10个任务</span><br><span class="line">        for (int index = 0; index &lt; 10; index++) &#123;</span><br><span class="line">            final int NO = index;</span><br><span class="line">            Runnable run = new Runnable() &#123;</span><br><span class="line">                public void run() &#123;</span><br><span class="line">                    try &#123;</span><br><span class="line">                        // 获取许可</span><br><span class="line">                        sp.acquire();</span><br><span class="line">                        System.out.println(Thread.currentThread().getName()</span><br><span class="line">                                + &quot;获取许可&quot; + &quot;(&quot; + NO + &quot;)，&quot; + &quot;剩余：&quot; + sp.availablePermits());</span><br><span class="line">                        //实现同步</span><br><span class="line">                        synchronized(SemaphoreTest2.class) &#123;</span><br><span class="line">                            System.out.println(Thread.currentThread().getName()</span><br><span class="line">                                    + &quot;执行data自增前：data=&quot; + data);</span><br><span class="line">                            data++;</span><br><span class="line">                            System.out.println(Thread.currentThread().getName()</span><br><span class="line">                                    + &quot;执行data自增后：data=&quot; + data);</span><br><span class="line">                        &#125;</span><br><span class="line">                        sp.release();</span><br><span class="line">                        System.out.println(Thread.currentThread().getName()</span><br><span class="line">                                + &quot;释放许可&quot; + &quot;(&quot; + NO + &quot;)，&quot; + &quot;剩余：&quot; + sp.availablePermits());</span><br><span class="line">                    &#125; catch (InterruptedException e) &#123;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;;</span><br><span class="line">            service.execute(run);</span><br><span class="line">        &#125;</span><br><span class="line">        service.shutdown();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">看一下运行结果(部分)：</span><br><span class="line">  </span><br><span class="line">初始化：当前有0个并发 </span><br><span class="line">  pool-1-thread-2获取许可(1)，剩余：0 </span><br><span class="line">  pool-1-thread-2执行data自增前：data=0 </span><br><span class="line">  pool-1-thread-3获取许可(2)，剩余：0 </span><br><span class="line">  pool-1-thread-1获取许可(0)，剩余：0 </span><br><span class="line">  pool-1-thread-2执行data自增后：data=1 </span><br><span class="line">  pool-1-thread-3执行data自增前：data=1 </span><br><span class="line">  pool-1-thread-3执行data自增后：data=2 </span><br><span class="line">  pool-1-thread-1执行data自增前：data=2 </span><br><span class="line">  pool-1-thread-7获取许可(6)，剩余：1 </span><br><span class="line">  pool-1-thread-3释放许可(2)，剩余：2 </span><br><span class="line">  pool-1-thread-1执行data自增后：data=3</span><br><span class="line">　　从结果中可以看出，每个线程在操作数据的前后，是不会受其他线程的影响的，但是其他线程可以获取许可，获取许可了之后就被阻塞在外面，等待当前线程操作完data才能去操作。当然也可以在当前线程操作data的时候，其他线程释放许可，因为这完全不冲突。 </span><br><span class="line">　　那如果把上面同步代码块去掉，再试试看会成什么乱七八糟的结果（部分）：</span><br><span class="line">  </span><br><span class="line">初始化：当前有0个并发 </span><br><span class="line">  pool-1-thread-3获取许可(2)，剩余：0 </span><br><span class="line">  pool-1-thread-2获取许可(1)，剩余：0 </span><br><span class="line">  pool-1-thread-3执行data自增前：data=0 </span><br><span class="line">  pool-1-thread-2执行data自增前：data=0 </span><br><span class="line">  pool-1-thread-1获取许可(0)，剩余：0 </span><br><span class="line">  pool-1-thread-3执行data自增后：data=1 </span><br><span class="line">  pool-1-thread-2执行data自增后：data=2 </span><br><span class="line">  pool-1-thread-7获取许可(6)，剩余：0 </span><br><span class="line">  pool-1-thread-1执行data自增前：data=2 </span><br><span class="line">  pool-1-thread-8获取许可(7)，剩余：0 </span><br><span class="line">  pool-1-thread-7执行data自增前：data=2 </span><br><span class="line">  pool-1-thread-2释放许可(1)，剩余：1 </span><br><span class="line">  pool-1-thread-7执行data自增后：data=4</span><br></pre></td></tr></table></figure>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">　　从结果中看，已经很明显了，线程2和3都进去了，然后初始data都是0，线程3自增了一下，打印出1是没问题的，但是线程2呢？也自增了一下，却打印出了2。也就是说，线程2在操作数据的前后，数据已经被线程3修改过了，再一次证明Semaphere并没有实现对共有数据的同步，在操作公共数据的时候，需要我们自己实现。 </span><br><span class="line">　　Semaphere中如果设置信号量为1的话，那就说明每次只能一个线程去操作任务，那这样的话也就不存在线程安全问题了，所以如果设置信号量为1的话，就可以去掉那个synchronized，不过效率就不行了。 </span><br><span class="line">　　Semaphere的使用就总结这么多吧！</span><br></pre></td></tr></table></figure>
 
-          
-        
       
     </div>
 
@@ -552,291 +399,32 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://pigletlet.github.io/yupengsun.github.io/yupengsun.github.io/2019/05/24/线程同步工具Semaphore的使用/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="james.lannister">
-      <meta itemprop="description" content="做一只爱撸代码的猿">
-      <meta itemprop="image" content="/yupengsun.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="偷闲">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/yupengsun.github.io/2019/05/24/线程同步工具Semaphore的使用/" class="post-title-link" itemprop="url">Untitled</a>
-              
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
+              <a href="/yupengsun.github.io/2019/05/24/线程同步工具Semaphore的使用/" rel="next" title>
+                <i class="fa fa-chevron-left"></i> 
+              </a>
             
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
+              <a href="/yupengsun.github.io/2019/05/24/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
             
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-05-24 10:04:01 / Modified: 10:12:41" itemprop="dateCreated datePublished" datetime="2019-05-24T10:04:01+08:00">2019-05-24</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h1 id="线程同步工具Semaphore的使用"><a href="#线程同步工具Semaphore的使用" class="headerlink" title="线程同步工具Semaphore的使用"></a>线程同步工具Semaphore的使用</h1><p>​        Semaphore通常用于限制可以访问某些资源（物理或逻辑的）的线程数目，我们可以自己设定最大访问量。它有两个很常用的方法是acquire()和release()，分别是获得许可和释放许可。</p>
-<p>​        官方JDK上面对Semaphore的解释是这样子的 ：</p>
-<p>​        一个计数信号量。从概念上讲，信号量维护了一个许可集。如有必要，在许可可用前会阻塞每一个acquire()，然后再获取该许可。每个release()添加一个许可，从而可能释放一个正在阻塞的获取者。但是，不使用实际的许可对象，Semaphore 只对可用许可的号码进行计数，并采取相应的行动。拿到信号量的线程可以进入代码，否则就等待。通过acquire()和release()获取和释放访问许可。</p>
-<p>​        我的解释是这样子的：</p>
-<pre><code>Semaphore相当于一个厕所，我在造的时候可以想造几个坑就造几个坑，假如现在我就造了3个坑，现在有10个人想要来上厕所，那么每次就只能3个人上，谁最先抢到谁就进去，出来了一个人后，第4个人才能进去，这个就限制了上厕所的人数了，就这个道理。每个人上厕所之前都先acquire()一下，如果有坑，就可以进入，没有就被阻塞，在外面等；上完厕所后，会release()一下，释放一个坑出来，以保证下一个人acquire()的时候有坑。
-</code></pre><p><strong>1. Semaphore基本使用</strong></p>
-<p>​        Semaphore在限制资源访问量的问题上用处很大，比如限制一个文件的并发访问次数等，它的原理很好理解。下面写一个Semaphore的示例代码：</p>
-<p><code>public class SemaphoreTest {</code></p>
-<p> <code>public static void main(String[] args) { ExecutorService service = Executors.newCachedThreadPool();*//使用并发库，创建缓存的线程池*</code></p>
-<p><code>final Semaphore sp = new Semaphore(3);*//创建一个Semaphore信号量，并设置最大并发数为3*</code> </p>
-<p><code>//availablePermits() //用来获取当前可用的访问次数*</code></p>
-<p><code>System.out.println(&quot;初始化：当前有&quot; + (3 - sp.availablePermits() + &quot;个并发&quot;));</code> </p>
-<p><code>//创建10个任务，上面的缓存线程池就会创建10个对应的线程去执行*</code></p>
-<p><code>for (int index = 0; index &lt; 10; index++) {</code> </p>
-<p><code>final int NO = index; *//记录第几个任务*</code> </p>
-<p><code>Runnable run = new Runnable() { *//具体任务*</code> </p>
-<p><code>public void run() {</code> </p>
-<p><code>try {</code> </p>
-<p><code>sp.acquire(); *// 获取许可*</code> </p>
-<p><code>System.out.println(Thread.currentThread().getName()</code></p>
-<p><code>\+ &quot;获取许可&quot; + &quot;(&quot;+NO+&quot;)，&quot; + &quot;剩余：&quot; + sp.availablePermits());</code> </p>
-<p><code>Thread.sleep(1000);</code></p>
-<p><code>*// 访问完后记得释放 ，否则在控制台只能打印3条记录，之后线程一直阻塞*</code></p>
-<p><code>sp.release(); *//释放许可*</code> </p>
-<p><code>System.out.println(Thread.currentThread().getName()</code></p>
-<p><code>\+ &quot;释放许可&quot; + &quot;(&quot;+NO+&quot;)，&quot; + &quot;剩余：&quot; + sp.availablePermits());</code> </p>
-<p><code>} catch (InterruptedException e) {</code> </p>
-<p><code>}</code></p>
-<p><code>}</code></p>
-<p><code>};</code></p>
-<p><code>service.execute(run); *//执行任务*</code> </p>
-<p><code>}</code></p>
-<p><code>service.shutdown(); *//关闭线程池*</code> </p>
-<p><code>}</code></p>
-<p>​        代码结构很容易理解，10个任务，每次最多3个线程去执行任务，其他线程被阻塞。可以通过打印信息来看线程的执行情况：</p>
-<blockquote>
-<p>初始化：当前有0个并发</p>
-<p>pool-1-thread-1获取许可(0)，剩余：1</p>
-<p>pool-1-thread-3获取许可(2)，剩余：0</p>
-<p>pool-1-thread-2获取许可(1)，剩余：1</p>
-<p>pool-1-thread-1释放许可(0)，剩余：3</p>
-<p>pool-1-thread-4获取许可(3)，剩余：1</p>
-<p>pool-1-thread-5获取许可(4)，剩余：1</p>
-<p>pool-1-thread-2释放许可(1)，剩余：3</p>
-<p>pool-1-thread-3释放许可(2)，剩余：3</p>
-<p>pool-1-thread-6获取许可(5)，剩余：0</p>
-<p>pool-1-thread-4释放许可(3)，剩余：2</p>
-<p>pool-1-thread-9获取许可(8)，剩余：0</p>
-<p>pool-1-thread-5释放许可(4)，剩余：2</p>
-<p>pool-1-thread-6释放许可(5)，剩余：2</p>
-<p>pool-1-thread-8获取许可(7)，剩余：0</p>
-<p>pool-1-thread-7获取许可(6)，剩余：2</p>
-<p>pool-1-thread-8释放许可(7)，剩余：2</p>
-<p>pool-1-thread-10获取许可(9)，剩余：2</p>
-<p>pool-1-thread-7释放许可(6)，剩余：2</p>
-<p>pool-1-thread-9释放许可(8)，剩余：2</p>
-<p>pool-1-thread-10释放许可(9)，剩余：3</p>
-</blockquote>
-<p>​        从结果中看，前三个为什么剩余的不是3，2，1呢？包括下面，每次释放的时候剩余的量好像也不对，其实是对的，只不过线程运行太快，前三个是这样子的：因为最大访问量是3，所以前三个在打印语句之前都执行完了aquire()方法了，或者有部分执行了，从上面的结果来看，线程1是第一个进去的，线程2第二个进去，然后线程1和2开始打印，所以只剩1个了，接下来线程3进来了，打印只剩0个了。后面释放的时候也是，打印前可能有不止一个释放了。</p>
-<p><strong>2. Semaphore同步问题</strong></p>
-<p>　    我从网上查了一下，有些人说Semaphore实现了同步功能，我觉得不对，因为我自己写了个测试代码试了，并不会自己解决并发问题，如果多个线程操作同一个数据，还是需要自己同步一下的。然后我查了一下官方JDK文档（要永远相信官方的文档），它里面是这样说的：</p>
-<blockquote>
-<p>获得一项前，每个线程必须从信号量获取许可，从而保证可以使用该项。该线程结束后，将项返回到池中并将许可返回到该信号量，从而允许其他线程获取该项。注意，调用 acquire() 时无法保持同步锁，因为这会阻止将项返回到池中。信号量封装所需的同步，以限制对池的访问，这同维持该池本身一致性所需的同步是分开的。</p>
-</blockquote>
-<p>​        这段官方的解释就很明确了，然后我就明白了网上有些人说的实现了同步的意思是信号量本身封装所需的同步，也就是说我拿到了一个，别人就无法拿到了，我释放了别人才能拿到（就跟我举的厕所的坑一样），但是我拿到了之后去操作公共数据的时候，针对这个数据操作的同步Semaphore就不管了，这就需要我们自己去同步了。下面写一个同步的测试代码　　</p>
-<p><code>public class SemaphoreTest2 {</code> </p>
-<p><code>private static int data = 0;</code> </p>
-<p><code>public static void main(String[] args) {</code> </p>
-<p><code>ExecutorService service = Executors.newCachedThreadPool();</code></p>
-<p><code>final Semaphore sp = new Semaphore(3);</code> </p>
-<p><code>System.out.println(&quot;初始化：当前有&quot; + (3 - sp.availablePermits() + &quot;个并发&quot;));</code> </p>
-<p><code>*// 10个任务*</code></p>
-<p><code>for (int index = 0; index &lt; 10; index++) {</code> </p>
-<p><code>final int NO = index;</code> </p>
-<p><code>Runnable run = new Runnable() {</code> </p>
-<p><code>public void run() {</code> </p>
-<p><code>try {</code> </p>
-<p><code>*// 获取许可*</code></p>
-<p><code>sp.acquire();</code></p>
-<p><code>System.out.println(Thread.currentThread().getName()</code></p>
-<p><code>\+ &quot;获取许可&quot; + &quot;(&quot; + NO + &quot;)，&quot; + &quot;剩余：&quot; + sp.availablePermits());</code> </p>
-<p><code>*//实现同步*</code></p>
-<p><code>synchronized(SemaphoreTest2.class) {</code></p>
-<p><code>System.out.println(Thread.currentThread().getName()</code></p>
-<p><code>\+ &quot;执行data自增前：data=&quot; + data);</code> </p>
-<p><code>data++;</code></p>
-<p><code>System.out.println(Thread.currentThread().getName()</code></p>
-<p><code>\+ &quot;执行data自增后：data=&quot; + data);</code> </p>
-<p><code>}</code></p>
-<p><code>sp.release();</code></p>
-<p><code>System.out.println(Thread.currentThread().getName()</code></p>
-<p><code>\+ &quot;释放许可&quot; + &quot;(&quot; + NO + &quot;)，&quot; + &quot;剩余：&quot; + sp.availablePermits());</code> </p>
-<p><code>} catch (InterruptedException e) {</code> </p>
-<p><code>}</code></p>
-<p><code>}</code></p>
-<p><code>};</code></p>
-<p><code>service.execute(run);</code></p>
-<p><code>}</code></p>
-<p><code>service.shutdown();</code></p>
-<p><code>}</code></p>
-<p><code>}</code></p>
-<p>看一下运行结果(部分)：</p>
-<blockquote>
-<p>初始化：当前有0个并发</p>
-<p>pool-1-thread-2获取许可(1)，剩余：0</p>
-<p>pool-1-thread-2执行data自增前：data=0</p>
-<p>pool-1-thread-3获取许可(2)，剩余：0</p>
-<p>pool-1-thread-1获取许可(0)，剩余：0</p>
-<p>pool-1-thread-2执行data自增后：data=1</p>
-<p>pool-1-thread-3执行data自增前：data=1</p>
-<p>pool-1-thread-3执行data自增后：data=2</p>
-<p>pool-1-thread-1执行data自增前：data=2</p>
-<p>pool-1-thread-7获取许可(6)，剩余：1</p>
-<p>pool-1-thread-3释放许可(2)，剩余：2</p>
-<p>pool-1-thread-1执行data自增后：data=3</p>
-</blockquote>
-<p>　　从结果中可以看出，每个线程在操作数据的前后，是不会受其他线程的影响的，但是其他线程可以获取许可，获取许可了之后就被阻塞在外面，等待当前线程操作完data才能去操作。当然也可以在当前线程操作data的时候，其他线程释放许可，因为这完全不冲突。</p>
-<p>　　那如果把上面同步代码块去掉，再试试看会成什么乱七八糟的结果（部分）：</p>
-<blockquote>
-<p>初始化：当前有0个并发</p>
-<p>pool-1-thread-3获取许可(2)，剩余：0</p>
-<p>pool-1-thread-2获取许可(1)，剩余：0</p>
-<p>pool-1-thread-3执行data自增前：data=0</p>
-<p>pool-1-thread-2执行data自增前：data=0</p>
-<p>pool-1-thread-1获取许可(0)，剩余：0</p>
-<p>pool-1-thread-3执行data自增后：data=1</p>
-<p>pool-1-thread-2执行data自增后：data=2</p>
-<p>pool-1-thread-7获取许可(6)，剩余：0</p>
-<p>pool-1-thread-1执行data自增前：data=2</p>
-<p>pool-1-thread-8获取许可(7)，剩余：0</p>
-<p>pool-1-thread-7执行data自增前：data=2</p>
-<p>pool-1-thread-2释放许可(1)，剩余：1</p>
-<p>pool-1-thread-7执行data自增后：data=4</p>
-</blockquote>
-<p>　　从结果中看，已经很明显了，线程2和3都进去了，然后初始data都是0，线程3自增了一下，打印出1是没问题的，但是线程2呢？也自增了一下，却打印出了2。也就是说，线程2在操作数据的前后，数据已经被线程3修改过了，再一次证明Semaphere并没有实现对共有数据的同步，在操作公共数据的时候，需要我们自己实现。</p>
-<p>　　Semaphere中如果设置信号量为1的话，那就说明每次只能一个线程去操作任务，那这样的话也就不存在线程安全问题了，所以如果设置信号量为1的话，就可以去掉那个synchronized，不过效率就不行了。</p>
-<p>　　Semaphere的使用就总结这么多吧！</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -846,14 +434,15 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -873,8 +462,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -920,6 +518,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于Semaphore的相关介绍"><span class="nav-number">1.</span> <span class="nav-text">关于Semaphore的相关介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Semaphore基本使用"><span class="nav-number">2.</span> <span class="nav-text">Semaphore基本使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Semaphore同步问题"><span class="nav-number">3.</span> <span class="nav-text">Semaphore同步问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -1048,6 +663,10 @@
 
 
   
+  <script src="/yupengsun.github.io/js/scrollspy.js?v=7.1.1"></script>
+<script src="/yupengsun.github.io/js/post-details.js?v=7.1.1"></script>
+
+
 
   
 
@@ -1063,6 +682,8 @@
 
   
 
+
+  
 
 
   
